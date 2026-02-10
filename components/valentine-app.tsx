@@ -134,36 +134,6 @@ export default function ValentineApp({
           </div>
         </section>
 
-        {/* Music Section - explicit player so sound always works */}
-        {hasSaidYes && (
-          <section className="music-section">
-            <h2>Our Song – Palagi by TJ Monterde</h2>
-            <p className="section-subtitle">
-              Tap play to listen while you read the letter and look at our memories.
-            </p>
-            <div className="music-player">
-              <iframe
-                src={`https://www.youtube.com/embed/${PALAGI_YOUTUBE_ID}?autoplay=0&loop=1&playlist=${PALAGI_YOUTUBE_ID}`}
-                title="Palagi by TJ Monterde"
-                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                allowFullScreen
-              />
-            </div>
-            <p className="music-note">
-              If the sound doesn&apos;t play inside apps like Messenger, tap the button
-              below to open the song directly in YouTube:
-            </p>
-            <a
-              href={`https://www.youtube.com/watch?v=${PALAGI_YOUTUBE_ID}`}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="music-link-button"
-            >
-              Open song in YouTube
-            </a>
-          </section>
-        )}
-
         {/* Photos Section */}
         {hasSaidYes && (
           <section

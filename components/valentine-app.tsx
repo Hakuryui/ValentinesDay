@@ -134,6 +134,24 @@ export default function ValentineApp({
           </div>
         </section>
 
+        {/* Music Section - explicit player so sound always works */}
+        {hasSaidYes && (
+          <section className="music-section">
+            <h2>Our Song – Palagi by TJ Monterde</h2>
+            <p className="section-subtitle">
+              Tap play to listen while you read the letter and look at our memories.
+            </p>
+            <div className="music-player">
+              <iframe
+                src={`https://www.youtube.com/embed/${PALAGI_YOUTUBE_ID}?autoplay=0&loop=1&playlist=${PALAGI_YOUTUBE_ID}`}
+                title="Palagi by TJ Monterde"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                allowFullScreen
+              />
+            </div>
+          </section>
+        )}
+
         {/* Photos Section */}
         {hasSaidYes && (
           <section
@@ -301,12 +319,12 @@ export default function ValentineApp({
         <span>Love is in the air</span>
       </footer>
 
-      {/* Background Music - Palagi by TJ Monterde via YouTube */}
+      {/* Background Music - Palagi by TJ Monterde via YouTube (best-effort autoplay) */}
       {isMusicPlaying && (
         <iframe
           ref={youtubePlayerRef}
           src={`https://www.youtube.com/embed/${PALAGI_YOUTUBE_ID}?autoplay=1&loop=1&playlist=${PALAGI_YOUTUBE_ID}&controls=0`}
-          allow="autoplay"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
           style={{
             position: "fixed",
             width: 1,

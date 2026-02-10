@@ -251,6 +251,37 @@ main {
   padding: 0 4px;
 }
 
+/* ── Music Section ── */
+.music-section {
+  padding: 20px 12px 24px;
+  border-radius: 24px;
+  background: rgba(255, 255, 255, 0.9);
+  box-shadow: var(--shadow-soft);
+}
+
+.music-section h2 {
+  text-align: center;
+  margin-top: 0;
+  margin-bottom: 8px;
+  font-size: 20px;
+  color: #ff2f86;
+}
+
+.music-player {
+  margin: 0 auto;
+  max-width: 480px;
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: 0 10px 24px rgba(0, 0, 0, 0.2);
+}
+
+.music-player iframe {
+  display: block;
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  border: none;
+}
+
 /* ── Gallery Section ── */
 .gallery-section {
   padding: 24px 12px 28px;

@@ -282,6 +282,33 @@ main {
   border: none;
 }
 
+.music-note {
+  margin-top: 10px;
+  font-size: 12px;
+  color: rgba(64, 32, 48, 0.8);
+  text-align: center;
+}
+
+.music-link-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  margin: 10px auto 0;
+  padding: 8px 18px;
+  border-radius: 999px;
+  background: linear-gradient(135deg, var(--pink-light), var(--pink-main));
+  color: #ff2f86;
+  font-size: 13px;
+  font-weight: 600;
+  text-decoration: none;
+  box-shadow: 0 8px 18px rgba(255, 153, 204, 0.5);
+  -webkit-tap-highlight-color: transparent;
+}
+
+.music-link-button:active {
+  transform: scale(0.97);
+}
+
 /* ── Gallery Section ── */
 .gallery-section {
   padding: 24px 12px 28px;

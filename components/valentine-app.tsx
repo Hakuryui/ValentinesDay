@@ -149,6 +149,18 @@ export default function ValentineApp({
                 allowFullScreen
               />
             </div>
+            <p className="music-note">
+              If the sound doesn&apos;t play inside apps like Messenger, tap the button
+              below to open the song directly in YouTube:
+            </p>
+            <a
+              href={`https://www.youtube.com/watch?v=${PALAGI_YOUTUBE_ID}`}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="music-link-button"
+            >
+              Open song in YouTube
+            </a>
           </section>
         )}
 

@@ -27,6 +27,7 @@ export default function ValentineApp({
   videos: initialVideos,
 }: ValentineAppProps) {
   const [hasSaidYes, setHasSaidYes] = useState(false)
+  const [showYesPopup, setShowYesPopup] = useState(false)
   const [noMessageVisible, setNoMessageVisible] = useState(false)
   const [noOffset, setNoOffset] = useState({ x: 0, y: 0 })
   const [isLetterOpen, setIsLetterOpen] = useState(false)
@@ -40,6 +41,11 @@ export default function ValentineApp({
   const youtubePlayerRef = useRef<HTMLIFrameElement>(null)
 
   const handleYes = () => {
+    // First show the special "I knew you'd say yes" popup
+    setShowYesPopup(true)
+  }
+
+  const confirmYesAndScroll = () => {
     setHasSaidYes(true)
     setNoMessageVisible(false)
     setShowYesCelebration(true)
@@ -52,7 +58,9 @@ export default function ValentineApp({
       if (galleryRef.current) {
         galleryRef.current.scrollIntoView({ behavior: "smooth" })
       }
-    }, 2000)
+    }, 300)
+
+    setShowYesPopup(false)
   }
 
   const handleNo = () => {
@@ -222,6 +230,32 @@ export default function ValentineApp({
           </section>
         )}
       </main>
+
+      {/* Yes Popup */}
+      {showYesPopup && (
+        <div
+          className="yes-popup"
+          onClick={(e) => {
+            if (e.target === e.currentTarget) {
+              setShowYesPopup(false)
+            }
+          }}
+        >
+          <div className="yes-popup-card">
+            <h3 className="yes-popup-title">I knew you&apos;d say yes 💗</h3>
+            <p className="yes-popup-message">
+              I love you, thank youu!! You just made my heart the happiest today Mahal ko.
+            </p>
+            <button
+              type="button"
+              className="yes-popup-button"
+              onClick={confirmYesAndScroll}
+            >
+             Wanna see our Memories? 💗
+            </button>
+          </div>
+        </div>
+      )}
 
       {/* Letter Modal */}
       {isLetterOpen && (
